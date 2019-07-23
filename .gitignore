@@ -30,3 +30,9 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### MySQL Workbench ###
+*.mwb.bak
+
+### Mac ###
+.DS_Store
