@@ -19,7 +19,7 @@ public class Like {
       // TODO 例外ハンドリング
       throw new IllegalArgumentException();
     }
-    return new Like(article.getId(), userId);
+    return new Like(article.id(), userId);
   }
 
   private ArticleId articleId;

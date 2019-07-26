@@ -8,10 +8,13 @@ import lombok.*;
 @Setter(AccessLevel.PRIVATE)
 @EqualsAndHashCode
 public class Article {
-  @Getter
   private ArticleId id;
   private UserId userId;
   private String title;
+
+  public ArticleId id() {
+    return this.id;
+  }
 
   public boolean writtenBy(UserId userId) {
     return this.userId.equals(userId);
