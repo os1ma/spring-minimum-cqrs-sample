@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.minimumcqrssample.infrastructure.mysqlrepository.article.ArticleMapper">
+
+    <resultMap id="Article" type="com.example.minimumcqrssample.domain.model.article.Article">
+        <result property="id.value" column="id"/>
+        <result property="userId.value" column="user_id"/>
+        <result property="title" column="title"/>
+    </resultMap>
+
+    <select id="findById" resultMap="Article">
+        SELECT id, user_id, title
+        FROM articles
+        WHERE id = #{value}
+    </select>
+
+</mapper>

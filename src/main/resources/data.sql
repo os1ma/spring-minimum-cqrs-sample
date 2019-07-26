@@ -17,6 +17,6 @@ INSERT INTO `mydb`.`likes` (`article_id`, `user_id`) VALUES
 (1, 2),
 (1, 3),
 (1, 4),
-(2, 1),
-(2, 3)
+(2, 3),
+(2, 4)
 ;

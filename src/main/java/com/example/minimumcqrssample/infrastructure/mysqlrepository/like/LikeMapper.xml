@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.minimumcqrssample.infrastructure.mysqlrepository.like.LikeMapper">
+
+    <insert id="save" parameterType="com.example.minimumcqrssample.domain.model.like.Like">
+        INSERT INTO `likes` (`article_id`, `user_id`) VALUES
+        (#{articleId.value}, #{userId.value})
+    </insert>
+
+</mapper>

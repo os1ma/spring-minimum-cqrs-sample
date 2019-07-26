@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.minimumcqrssample.infrastructure.mysqlquery.article.ArticleMySQLQueryMapper">
+
+    <resultMap id="article"
+               type="com.example.minimumcqrssample.interfaces.api.article.ArticleListQueryResponse$Article">
+        <result property="title" column="title"/>
+        <result property="authorName" column="author_name"/>
+        <result property="likeCount" column="like_count"/>
+    </resultMap>
+
+    <select id="list" resultMap="article">
+        SELECT
+            MAX(a.title) AS title,
+            MAX(u.name) AS author_name,
+            COUNT(*) AS like_count
+        FROM articles a
+        INNER JOIN users u ON a.user_id = u.id
+        INNER JOIN likes l ON a.id = l.article_id
+        GROUP BY l.article_id
+    </select>
+
+</mapper>
