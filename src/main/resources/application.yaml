@@ -2,8 +2,15 @@ spring:
   datasource:
     driverClassName: org.h2.Driver
     url: jdbc:h2:mem:mydb;MODE=MySQL
-    username: sa
-    password:
+    username: root
+    password: P@ssw0rd
   h2:
     console:
       enabled: true
+  autoconfigure:
+    exclude:
+      org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration
+server:
+    port:
+      8088
+ 

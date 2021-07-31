@@ -31,8 +31,8 @@ ENGINE = InnoDB;
 -- Table `mydb`.`likes`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`likes` (
-  `article_id` INT NULL,
-  `user_id` INT NULL,
+  `article_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
   INDEX `fk_likes_articles_idx` (`article_id` ASC),
   INDEX `fk_likes_users1_idx` (`user_id` ASC),
   PRIMARY KEY (`article_id`, `user_id`),
