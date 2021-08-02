@@ -5,6 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+//import java.util.function;
+
 
 @RestController
 @RequestMapping("/articles")
@@ -15,6 +17,9 @@ public class ArticleQueryController {
 
   @GetMapping
   public ResponseEntity<ArticleListQueryResponse> list() {
+    //  Function<Integer, String> asterisker = (i) -> { return "*"+ i; };
+    //  String result = asterisker.apply(10);
+    //  System.out.println(result);
     return ResponseEntity.ok(service.list());
   }
 
